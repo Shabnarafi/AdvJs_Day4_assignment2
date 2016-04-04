@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<script>
+	function Person(name, age){
+		this.name = name;
+		this.age = age;
+
+	}
+	
+	function Student(id, institute)
+	{
+		this.id = id;
+		this.institute = institute;
+	
+	}
+	
+	var objPerson = new Person('Shabna', 26);
+	
+	
+	Object.defineProperty(objPerson,'place',{value:'Trivandrum',enumerable:true,writable:true});
+	
+	
+	
+	Student.prototype = objPerson;
+	
+	
+	var objStudent = new Student(37, 'Acadgild');
+	
+	objStudent.place = 'Kochi';
+	
+	console.log(objStudent);
+	
+	console.log(objStudent.place);
+	
+</script>
+</body>
+</html>
